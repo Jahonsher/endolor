@@ -21,6 +21,40 @@ const translations = {
       address: "O'zbekiston, Toshkent sh., Bunyodkor prospekti, Chilonzor 17-kvartal, 33/1-uy",
       copyright: "© 2024 EndoLOR. Barcha huquqlar himoyalangan.",
     },
+    aboutPage: {
+      hero: { title: "Biz haqimizda", breadcrumb: "Bosh sahifa > Biz haqimizda" },
+      mainTitle: "LOR markazi, LOR klinikasi, Yunusobod LOR, Chilonzor LOR, LOR med markazi, LOR 24/7 Toshkent, LOR jarrohligi, Lazer markazi",
+      subTitle: "YUNUSOBOD VA CHILONZORDAGI LOR KLINIKAMIZ 24/7 DAM OLISH KUNLARISIZ ISHLAYDI",
+      desc1: "LOR markazi, LOR klinikasi, Yunusobod LOR, Chilonzor LOR, LOR med markazi, LOR 24/7 Toshkent, LOR jarrohligi. Lazer yordamida jarrohlik, lazer markazi, lazer jarrohligi, quloqni lazer bilan davolash, burun lazer jarrohligi, endoskopik lazer septoplastikasi, endoskopik lazer vazotomiyasi.",
+      desc2: "Otorinolaringolog (LOR) quloq, burun va tomoq (tomoq, traxeya, halqum) kasalliklarini davolaydi. O'z vaqtida tashxis qo'yish va davolash asoratlar va surunkali shakllarning oldini olishga yordam beradi. Bizning LOR 24/7 markazimizda siz tajribali mutaxassisga istalgan vaqtda navbatsiz, yo'llanmasiz va ortiqcha hujjatlarsiz murojaat qilishingiz mumkin.",
+      attentionBox: {
+        title: "DIQQAT!",
+        subtitle: "Quyidagi hollarda shoshilinch LOR konsultatsiyasi talab qilinadi:",
+        list: [
+          "Sinus og'rig'i va yiringli ajralmalar",
+          "Eshitish yoki hid bilishning buzilishi",
+          "Quloqdan g'ayritabiiy ajralma kelishi, shovqin, og'riq yoki bosim",
+          "Tomoq qizarishi, yutish qiyinligi, jag' ostidagi limfa tugunlarining shishishi"
+        ]
+      },
+      consultationBox: {
+        title: "Kimga otorinolaringolog konsultatsiyasi kerak?",
+        subtitle: "LOR kasalliklari belgilariga e'tiborsiz bo'lmaslik kerak. LOR shifokoriga tashrifni kechiktirmang!",
+        list: [
+          "Burun shilliq qavatining qurishi va burun orqali nafas olish qiyinligi",
+          "Uzoq davom etadigan burun oqishi yoki yo'tal",
+          "Tez-tez burun qonashi",
+          "Og'izdan yoqimsiz hid kelishi",
+          "Uyquning buzilishi, ertalabki charchoq, bosh aylanishi",
+          "Tez charchash",
+          "Xo'rlash"
+        ]
+      },
+      gallery: {
+        subtitle: "KLINIKA GALEREYASI",
+        title: "Zamonaviy g'amxo'rlik va qulay joylar"
+      }
+    },
     contactPage: {
       pageTitle: "Bog'lanish",
       locationTitle: "Bizning manzil",
@@ -149,6 +183,40 @@ const translations = {
       address: "Ўзбекистон, Тошкент ш., Бунёдкор проспекти, Чилонзор 17-квартал, 33/1-уй",
       copyright: "© 2024 EndoLOR. Барча ҳуқуқлар ҳимояланган.",
     },
+    aboutPage: {
+      hero: { title: "Биз ҳақимизда", breadcrumb: "Бош саҳифа > Биз ҳақимизда" },
+      mainTitle: "ЛОР маркази, ЛОР клиникаси, Юнусобод ЛОР, Чилонзор ЛОР, ЛОР мед маркази, ЛОР 24/7 Тошкент, ЛОР жарроҳлиги, Лазер маркази",
+      subTitle: "ЮНУСОБОД ВА ЧИЛОНЗОРДАГИ ЛОР КЛИНИКАМИЗ 24/7 ДАМ ОЛИШ КУНЛАРИСИЗ ИШЛАЙДИ",
+      desc1: "ЛОР маркази, ЛОР клиникаси, Юнусобод ЛОР, Чилонзор ЛОР, ЛОР мед маркази, ЛОР 24/7 Тошкент, ЛОР жарроҳлиги. Лазер ёрдамида жарроҳлик, лазер маркази, лазер жарроҳлиги, қулоқни лазер билан даволаш, бурун лазер жарроҳлиги, эндоскопик лазер септопластикаси, эндоскопик лазер вазотомияси.",
+      desc2: "Оториноларинголог (ЛОР) қулоқ, бурун ва томоқ (томоқ, трахея, ҳалқум) касалликларини даволайди. Ўз вақтида ташхис қўйиш ва даволаш асоратлар ва сурункали шаклларнинг олдини олишга ёрдам беради. Бизнинг ЛОР 24/7 марказимизда сиз тажрибали мутахассисга исталган вақтда навбатсиз, йўлланмасиз ва ортиқча ҳужжатларсиз мурожаат қилишингиз мумкин.",
+      attentionBox: {
+        title: "ДИҚҚАТ!",
+        subtitle: "Қуйидаги ҳолларда шошилинч ЛОР консултацияси талаб қилинади:",
+        list: [
+          "Синус оғриғи ва йирингли ажралмалар",
+          "Эшитиш ёки ҳид билишнинг бузилиши",
+          "Қулоқдан ғайритабиий ажралма келиши, шовқин, оғриқ ёки босим",
+          "Томоқ қизариши, ютиш қийинлиги, жағ остидаги лимфа тугунларининг шишиши"
+        ]
+      },
+      consultationBox: {
+        title: "Кимга otorinolaringolog консултацияси керак?",
+        subtitle: "ЛОР касалликлари белгиларига эътиборсиз бўлмаслик керак. ЛОР шифокорига ташрифни кечиктирманг!",
+        list: [
+          "Бурун шиллиқ қаватининг қуриши ва бурун орқали нафас олиш қийинлиги",
+          "Узоқ давом этадиган бурун оқиши ёки йўтал",
+          "Тез-тез бурун қонаши",
+          "Оғиздан ёқимсиз ҳид келиши",
+          "Уйқунинг бузилиши, эрталабки чарчоқ, бош айланиши",
+          "Тез чарчаш",
+          "Хўрлаш"
+        ]
+      },
+      gallery: {
+        subtitle: "КЛИНИКА ГАЛЕРЕЯСИ",
+        title: "Замоновий ғамхўрлик ва қулай жойлар"
+      }
+    },
     contactPage: {
       pageTitle: "Боғланиш",
       locationTitle: "Бизнинг манзил",
@@ -167,7 +235,7 @@ const translations = {
       subjectPlaceholder: "Хабар мавзуси",
       message: "Хабар",
       messagePlaceholder: "Хабарингизни ёзинг...",
-      submit: "Хабар юбориш",
+      submit: "Хабар юборириш",
     },
     hero: {
       slides: [
@@ -197,7 +265,7 @@ const translations = {
         desc: "Оториноларинголог (ЛОР) қулоқ, бурун ва томоқ касалликларини даволайди. Асоратлар ва сурункали шаклга ўтиш хавфини камайтириш учун ўз вақтида ташхис ва даволаш муҳим.",
         symptoms: [
           "Бурун шиллиқ қаватининг қуриши, бурундан нафас олиш қийинлашиши",
-          "Узоқ давом этадиган тумов ва/ёки йўтал",
+          "Узоқ давом этадиган тумов ва/йки йўтал",
           "Тез-тез бурундан қон кетиши",
           "Оғиздан ёқимсиз ҳид келиши",
           "Тинч бўлмаган уйқу, эрталаб чарчоқ, бош айланиш",
@@ -276,6 +344,40 @@ const translations = {
       contactTitle: "Контакты",
       address: "Узбекистан, г. Ташкент, проспект Бунёдкор, Чиланзар 17-квартал, дом 33/1",
       copyright: "© 2024 EndoLOR. Все права защищены.",
+    },
+    aboutPage: {
+      hero: { title: "О нас", breadcrumb: "Главная > О нас" },
+      mainTitle: "ЛОР центр, ЛОР клиника, Юнусабад ЛОР, Чиланзар ЛОР, ЛОР мед центр, ЛОР 24/7 Ташкент, ЛОР хирургия, Лазерный центр",
+      subTitle: "НАША ЛОР-КЛИНИКА В ЮНУСАБАДЕ И ЧИЛАНЗАРЕ РАБОТАЕТ 24/7 БЕЗ ВЫХОДНЫХ",
+      desc1: "ЛОР центр, ЛОР клиника, Юнусабад ЛОР, Чиланзар ЛОР, ЛОР мед центр, ЛОР 24/7 Ташкент, ЛОР хирургия. Лазерная хирургия, лазерный центр, лазерная хирургия, лазерное лечение уха, лазерная хирургия носа, эндоскопическая лазерная септопластика, эндоскопическая лазерная вазотомия.",
+      desc2: "Оториноларинголог (ЛОР) лечит заболевания уха, носа и горла (гортани, трахеи, глотки). Своевременная диагностика и лечение помогают предотвратить осложнения и переход болезней в хроническую форму. В нашем центре ЛОР 24/7 вы можете посетить опытного специалиста в удобное время круглосуточно, без очередей, направлений и бумажной волокиты.",
+      attentionBox: {
+        title: "ВНИМАНИЕ!",
+        subtitle: "Срочная ЛОР-консультация требуется при:",
+        list: [
+          "Боли в пазухах и гнойные выделения",
+          "Нарушение слуха или обоняния",
+          "Необычные выделения из уха, шум, боль или давление",
+          "Покраснение горла, затруднение глотания, увеличение лимфоузлов под челюстью"
+        ]
+      },
+      consultationBox: {
+        title: "Кому нужна консультация оториноларинголога?",
+        subtitle: "Симптомы ЛОР-заболеваний нельзя игнорировать. Не откладывайте визит к ЛОР-врачу!",
+        list: [
+          "Сухость слизистой носа и затрудненное носовое дыхание",
+          "Длительный насморк или кашель",
+          "Частые носовые кровотечения",
+          "Неприятный запах изо рта",
+          "Нарушения сна, утренняя усталость, головокружение",
+          "Быстрая утомляемость",
+          "Храп"
+        ]
+      },
+      gallery: {
+        subtitle: "ГАЛЕРЕЯ КЛИНИКИ",
+        title: "Современный уход и комфортные условия"
+      }
     },
     contactPage: {
       pageTitle: "Контакты",
@@ -405,6 +507,40 @@ const translations = {
       address: "Uzbekistan, Tashkent, Bunyodkor avenue, Chilanzar 17th quarter, 33/1",
       copyright: "© 2024 EndoLOR. All Rights Reserved.",
     },
+    aboutPage: {
+      hero: { title: "About Us", breadcrumb: "Home > About Us" },
+      mainTitle: "ENT center, ENT clinic, Yunusabad ENT, Chilonzor ENT, ENT med center, ENT 24/7 Tashkent, ENT surgery, Laser center",
+      subTitle: "OUR ENT CLINIC IN YUNUSABAD AND CHILONZOR WORKS 24/7 WITHOUT DAYS OFF",
+      desc1: "ENT center, ENT clinic, Yunusabad ENT, Chilonzor ENT, ENT med center, ENT 24/7 Tashkent, ENT surgery. Laser-assisted surgery, laser center, laser surgery, laser ear treatment, laser nasal surgery, endoscopic laser septoplasty, endoscopic laser vasotomy.",
+      desc2: "An otolaryngologist (ENT) treats diseases of the ear, nose, and throat (larynx, trachea, pharynx). Timely diagnosis and treatment help prevent complications and chronic forms. At our ENT 24/7 center you can visit an experienced specialist at a convenient time 24/7 without queues, referrals, or paperwork.",
+      attentionBox: {
+        title: "ATTENTION!",
+        subtitle: "Urgent ENT consultation is required for:",
+        list: [
+          "Sinus pain and purulent discharge",
+          "Impaired hearing or smell",
+          "Unusual ear discharge, noise, pain, or pressure",
+          "Throat redness, difficulty swallowing, swollen lymph nodes under the jaw"
+        ]
+      },
+      consultationBox: {
+        title: "Who needs an otolaryngologist consultation?",
+        subtitle: "Signs of ENT disorders should not be ignored. Do not delay a visit to an ENT doctor!",
+        list: [
+          "Dry nasal mucosa and difficulty breathing through the nose",
+          "Prolonged runny nose or cough",
+          "Frequent nosebleeds",
+          "Bad breath",
+          "Sleep disturbances, morning fatigue, dizziness",
+          "Rapid fatigue",
+          "Snoring"
+        ]
+      },
+      gallery: {
+        subtitle: "CLINIC GALLERY",
+        title: "Modern care and comfortable spaces"
+      }
+    },
     contactPage: {
       pageTitle: "Contact Us",
       locationTitle: "Our Location",
@@ -513,4 +649,4 @@ const translations = {
   },
 }
 
-export default translations
+export default translations;
