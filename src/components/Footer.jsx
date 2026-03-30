@@ -10,8 +10,8 @@ export default function Footer({ lang }) {
       {/* ── Newsletter Bar ── */}
       <div className="relative -mt-1">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
-          <div className="bg-[#2E86DE] rounded-2xl px-8 py-8 md:py-10 flex flex-col md:flex-row items-center justify-between gap-6 -translate-y-12 shadow-xl">
-            <div className="flex items-center gap-4 shrink-0">
+          <div className="bg-[#2E86DE] rounded-2xl px-6 py-8 md:px-8 md:py-10 flex flex-col md:flex-row items-center justify-between gap-6 -translate-y-12 shadow-xl text-center md:text-left">
+            <div className="flex flex-col md:flex-row items-center gap-4 shrink-0">
               <div className="w-14 h-14 bg-white/15 rounded-full flex items-center justify-center">
                 <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -21,13 +21,15 @@ export default function Footer({ lang }) {
                 {f.newsletter}
               </h3>
             </div>
-            <div className="flex w-full md:w-auto gap-3">
+            
+            {/* TO'G'IRLANGAN QISM: flex-col qo'shildi, sm:flex-row kichik ekrandan boshlab yonma-yon qiladi */}
+            <div className="flex flex-col sm:flex-row w-full md:w-auto gap-3">
               <input
                 type="email"
                 placeholder={f.emailPlaceholder}
-                className="flex-1 md:w-72 px-5 py-3.5 bg-white/10 border border-white/20 rounded-lg text-sm text-white placeholder-white/50 focus:outline-none focus:bg-white/15 transition-colors"
+                className="w-full md:w-72 px-5 py-3.5 bg-white/10 border border-white/20 rounded-lg text-sm text-white placeholder-white/50 focus:outline-none focus:bg-white/15 transition-colors"
               />
-              <button className="px-6 py-3.5 bg-white text-[#2E86DE] font-bold text-sm uppercase tracking-wide rounded-lg hover:bg-gray-100 transition-colors cursor-pointer shrink-0">
+              <button className="w-full sm:w-auto px-8 py-3.5 bg-white text-[#2E86DE] font-bold text-sm uppercase tracking-wide rounded-lg hover:bg-gray-100 transition-colors cursor-pointer shrink-0">
                 {f.submit}
               </button>
             </div>
@@ -40,17 +42,17 @@ export default function Footer({ lang }) {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Col 1 — Logo & Description */}
           <div>
-            <Link to="/" className="flex items-center gap-2 mb-5">
+            <Link to="/" className="flex items-center gap-2 mb-5 justify-center sm:justify-start">
               <img
                 src="https://endolor.uz/logo.png"
                 alt="EndoLOR"
                 className="h-12 w-auto brightness-0 invert"
               />
             </Link>
-            <p className="text-gray-400 text-sm leading-relaxed mb-6">
+            <p className="text-gray-400 text-sm leading-relaxed mb-6 text-center sm:text-left">
               {f.desc}
             </p>
-            <div className="flex gap-3">
+            <div className="flex gap-3 justify-center sm:justify-start">
               <a href="https://www.youtube.com/@shavkatlor" target="_blank" rel="noreferrer" className="w-10 h-10 bg-white/10 hover:bg-[#2E86DE] rounded-full flex items-center justify-center transition-colors">
                 <svg className="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
               </a>
@@ -64,10 +66,10 @@ export default function Footer({ lang }) {
           </div>
 
           {/* Col 2 — Quick Links */}
-          <div>
-            <h4 className="text-white text-base font-bold mb-5 relative pb-3">
+          <div className="text-center sm:text-left">
+            <h4 className="text-white text-base font-bold mb-5 relative pb-3 inline-block sm:block">
               {f.links}
-              <span className="absolute bottom-0 left-0 w-10 h-0.5 bg-[#2E86DE]" />
+              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 sm:left-0 sm:translate-x-0 w-10 h-0.5 bg-[#2E86DE]" />
             </h4>
             <ul className="space-y-2.5">
               {[
@@ -79,7 +81,7 @@ export default function Footer({ lang }) {
                 { label: f.videos, to: '/videos' },
               ].map((link, i) => (
                 <li key={i}>
-                  <Link to={link.to} className="text-gray-400 hover:text-[#5DADE2] text-sm transition-colors flex items-center gap-2">
+                  <Link to={link.to} className="text-gray-400 hover:text-[#5DADE2] text-sm transition-colors flex items-center justify-center sm:justify-start gap-2">
                     <span className="text-[#2E86DE]">›</span> {link.label}
                   </Link>
                 </li>
@@ -87,52 +89,30 @@ export default function Footer({ lang }) {
             </ul>
           </div>
 
-          {/* Col 3 — Working Hours */}
-          {/* <div>
-            <h4 className="text-white text-base font-bold mb-5 relative pb-3">
-              {f.hoursTitle}
-              <span className="absolute bottom-0 left-0 w-10 h-0.5 bg-[#2E86DE]" />
-            </h4>
-            <div className="bg-white/5 rounded-xl p-5">
-              <div className="flex justify-between text-sm mb-3.5 pb-3.5 border-b border-white/10">
-                <span className="text-gray-400">{f.weekdays}</span>
-                <span className="text-[#5DADE2] font-bold">08:00 — 20:00</span>
-              </div>
-              <div className="flex justify-between text-sm mb-3.5 pb-3.5 border-b border-white/10">
-                <span className="text-gray-400">{f.sunday}</span>
-                <span className="text-[#5DADE2] font-bold">09:00 — 18:00</span>
-              </div>
-              <div className="text-center pt-2">
-                <span className="text-xs text-gray-500">{f.emergency}</span>
-                <div className="text-[#5DADE2] font-extrabold text-2xl mt-1">24/7</div>
-              </div>
-            </div>
-          </div> */}
-
           {/* Col 4 — Contact */}
-          <div>
-            <h4 className="text-white text-base font-bold mb-5 relative pb-3">
+          <div className="text-center sm:text-left">
+            <h4 className="text-white text-base font-bold mb-5 relative pb-3 inline-block sm:block">
               {f.contactTitle}
-              <span className="absolute bottom-0 left-0 w-10 h-0.5 bg-[#2E86DE]" />
+              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 sm:left-0 sm:translate-x-0 w-10 h-0.5 bg-[#2E86DE]" />
             </h4>
             <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <span className="w-9 h-9 bg-white/10 rounded-full flex items-center justify-center shrink-0 mt-0.5">
+              <li className="flex flex-col sm:flex-row items-center sm:items-start gap-3">
+                <span className="w-9 h-9 bg-white/10 rounded-full flex items-center justify-center shrink-0">
                   <svg className="w-4 h-4 text-[#5DADE2]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
                 </span>
-                <a href="tel:+998903258600" className="text-gray-300 hover:text-[#5DADE2] text-sm transition-colors mt-2">+998 90 325 86 00</a>
+                <a href="tel:+998903258600" className="text-gray-300 hover:text-[#5DADE2] text-sm transition-colors">+998 90 325 86 00</a>
               </li>
-              <li className="flex items-start gap-3">
-                <span className="w-9 h-9 bg-white/10 rounded-full flex items-center justify-center shrink-0 mt-0.5">
+              <li className="flex flex-col sm:flex-row items-center sm:items-start gap-3">
+                <span className="w-9 h-9 bg-white/10 rounded-full flex items-center justify-center shrink-0">
                   <svg className="w-4 h-4 text-[#5DADE2]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                 </span>
-                <a href="mailto:info@endolor.uz" className="text-gray-300 hover:text-[#5DADE2] text-sm transition-colors mt-2">info@endolor.uz</a>
+                <a href="mailto:info@endolor.uz" className="text-gray-300 hover:text-[#5DADE2] text-sm transition-colors">info@endolor.uz</a>
               </li>
-              <li className="flex items-start gap-3">
-                <span className="w-9 h-9 bg-white/10 rounded-full flex items-center justify-center shrink-0 mt-0.5">
+              <li className="flex flex-col sm:flex-row items-center sm:items-start gap-3">
+                <span className="w-9 h-9 bg-white/10 rounded-full flex items-center justify-center shrink-0">
                   <svg className="w-4 h-4 text-[#5DADE2]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                 </span>
-                <span className="text-gray-400 text-sm leading-relaxed mt-2">{f.address}</span>
+                <span className="text-gray-400 text-sm leading-relaxed text-center sm:text-left">{f.address}</span>
               </li>
             </ul>
           </div>

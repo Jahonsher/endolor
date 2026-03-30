@@ -21,6 +21,15 @@ const translations = {
       address: "O'zbekiston, Toshkent sh., Bunyodkor prospekti, Chilonzor 17-kvartal, 33/1-uy",
       copyright: "© 2024 EndoLOR. Barcha huquqlar himoyalangan.",
     },
+    modal: {
+      title: "Biz bilan bog'lanish",
+      desc: "Ism va telefon raqamingizni qoldiring — biz tezda aloqaga chiqamiz.",
+      nameLabel: "Ism",
+      namePlaceholder: "Ismingizni kiriting",
+      phoneLabel: "Telefon raqam",
+      phonePlaceholder: "Telefon raqamingizni kiriting",
+      submit: "YUBORISH"
+    },
     aboutPage: {
       hero: { title: "Biz haqimizda", breadcrumb: "Bosh sahifa > Biz haqimizda" },
       mainTitle: "LOR markazi, LOR klinikasi, Yunusobod LOR, Chilonzor LOR, LOR med markazi, LOR 24/7 Toshkent, LOR jarrohligi, Lazer markazi",
@@ -79,7 +88,7 @@ const translations = {
       slides: [
         { badge: "Tadqiqot va texnologiya", title1: "Global taraqqiyot uchun", title2: "ilmiy yetakchilik", desc: "Biz sog'liqni saqlash, atrof-muhit va sanoat kelajagini shakllantiradigan ilmiy kashfiyotlar, mukammallik va texnologik yutuqlarga sodiqmiz." },
         { badge: "Innovatsiya", title1: "Ilmiy izlanishlarning", title2: "kelajagini boshlab beramiz", desc: "Dunyo miqyosidagi jamoalar bilan hamkorlik qilib, kashfiyotlarni tezlashtiramiz va keng ko'lamda ishonchli natijalar taqdim etamiz." },
-        { badge: "Kashfiyot", title1: "G'oyalarni amaliy", title2: "yechimlarga aylantiramiz", desc: "Kontsepsiyadan tasdiqqacha — sizning tadqiqot yo'lingizni mustahkam jarayonlar va ekspert hamkorliklari bilan qo'llab-quvvatlaymiz." },
+        { badge: "Kashfiyot", title1: "G'oyarni amaliy", title2: "yechimlarga aylantiramiz", desc: "Kontsepsiyadan tasdiqqacha — sizning tadqiqot yo'lingizni mustahkam jarayonlar va ekspert hamkorliklari bilan qo'llab-quvvatlaymiz." },
       ],
       btn: "Xizmatlarimiz",
       appointment: "Qabulga yozilish",
@@ -183,6 +192,15 @@ const translations = {
       address: "Ўзбекистон, Тошкент ш., Бунёдкор проспекти, Чилонзор 17-квартал, 33/1-уй",
       copyright: "© 2024 EndoLOR. Барча ҳуқуқлар ҳимояланган.",
     },
+    modal: {
+      title: "Биз билан боғланиш",
+      desc: "Исм ва телефон рақамингизни қолдиринг — биз тезда алоқага чиқамиз.",
+      nameLabel: "Исм",
+      namePlaceholder: "Исмингизни киритинг",
+      phoneLabel: "Телефон рақам",
+      phonePlaceholder: "Телефон рақамингизни киритинг",
+      submit: "ЮБОРИШ"
+    },
     aboutPage: {
       hero: { title: "Биз ҳақимизда", breadcrumb: "Бош саҳифа > Биз ҳақимизда" },
       mainTitle: "ЛОР маркази, ЛОР клиникаси, Юнусобод ЛОР, Чилонзор ЛОР, ЛОР мед маркази, ЛОР 24/7 Тошкент, ЛОР жарроҳлиги, Лазер маркази",
@@ -222,7 +240,7 @@ const translations = {
       locationTitle: "Бизнинг манзил",
       address: "Ўзбекистон, Тошкент ш., Бунёдкор проспекти, Чилонзор 17-квартал, 33/1-уй",
       phoneTitle: "Телефон рақам",
-      emailTitle: "Электрон почта",
+      emailTitle: "Електрон почта",
       formBadge: "Боғланиш",
       formTitle: "Биз билан боғланинг",
       name: "Исмингиз",
@@ -240,8 +258,8 @@ const translations = {
     hero: {
       slides: [
         { badge: "Тадқиқот ва технология", title1: "Глобал тараққиёт учун", title2: "илмий етакчилик", desc: "Биз соғлиқни сақлаш, атроф-муҳит ва саноат келажагини шакллантирадиган илмий кашфиётлар, мукаммаллик ва технологик ютуқларга содиқмиз." },
-        { badge: "Инновация", title1: "Илмий изланишларнинг", title2: "келажагини бошлаб берамиз", desc: "Дунё миқёсидаги жамоалар билан ҳамкорлик қилиб, кашфиётларни тезлаштирамиз ва кенг кўламда ишончли натижалар тақдим этамиз." },
-        { badge: "Кашфиёт", title1: "Ғояларни амалий", title2: "ечимларга айлантирамиз", desc: "Концепциядан тасдиққача — сизнинг тадқиқот йўлингизни мустаҳкам жараёнлар ва эксперт ҳамкорликлари билан қўллаб-қувватлаймиз." },
+        { badge: "Инновация", title1: "Илмий изланишларнинг", title2: "келажагини бошлаб берамиз", desc: "Дунё миқёсидаги жамоалар билан ҳамкорлик қилиб, кашфиётларни тезлаштирамиз ва кенг кўламда ишончли натижалар тақдим етамиз." },
+        { badge: "Кашфиёт", title1: "Ғояларни амалий", title2: "ечимларга айлантирамиз", desc: "Концепциядан тасдиққача — сизнинг тадқиқот йўлингизни мустаҳкам жараёнлар ва експерт ҳамкорликлари билан қўллаб-қувватлаймиз." },
       ],
       btn: "Хизматларимиз",
       appointment: "Қабулга ёзилиш",
@@ -251,11 +269,11 @@ const translations = {
       title: "Биз нима таклиф қиламиз",
       items: [
         { name: "Септопластика", desc: "Бурун тўсиғини тиклаш операцияси." },
-        { name: "Ринопластика", desc: "Бурун шаклини эстетик ва функционал жиҳатдан тузатиш." },
+        { name: "Ринопластика", desc: "Бурун шаклини естеттик ва функсионал жиҳатдан тузатиш." },
         { name: "Аденотомия", desc: "Аденоидларни олиб ташлаш." },
         { name: "Тонзиллотомия", desc: "Муруғак безларини даволаш." },
-        { name: "Эндоскопия", desc: "ЛОР аъзоларини замонавий усуллар билан текшириш." },
-        { name: "Эшитиш диагностикаси", desc: "Эшитиш қобилиятини текшириш." },
+        { name: "Ендоскопия", desc: "ЛОР аъзоларини замонавий усуллар билан текшириш." },
+        { name: "Ешитиш диагностикаси", desc: "Ешитиш қобилиятини текшириш." },
       ],
     },
     home: {
@@ -265,10 +283,10 @@ const translations = {
         desc: "Оториноларинголог (ЛОР) қулоқ, бурун ва томоқ касалликларини даволайди. Асоратлар ва сурункали шаклга ўтиш хавфини камайтириш учун ўз вақтида ташхис ва даволаш муҳим.",
         symptoms: [
           "Бурун шиллиқ қаватининг қуриши, бурундан нафас олиш қийинлашиши",
-          "Узоқ давом этадиган тумов ва/йки йўтал",
+          "Узоқ давом етадиган тумов ва/йки йўтал",
           "Тез-тез бурундан қон кетиши",
           "Оғиздан ёқимсиз ҳид келиши",
-          "Тинч бўлмаган уйқу, эрталаб чарчоқ, бош айланиш",
+          "Тинч бўлмаган уйқу, ерталабки чарчоқ, бош айланиши",
           "Тез чарчаш",
           "Хўрлаш",
         ],
@@ -294,11 +312,11 @@ const translations = {
         btn: "Батафсил",
         allBtn: "Барча хизматлар",
         items: [
-          { name: "Бир томондан эндоскопик эндоназал шайверли гайморотомия", img: "" },
-          { name: "Бир томондан эндоскопик эндоназал шайверли фронтотомия", img: "" },
-          { name: "Бир томондан эндоскопик эндоназал шайверли сфеноидотомия", img: "" },
-          { name: "Эндоскопик эндоназал шайверли полипотомия", img: "" },
-          { name: "Бир томондан эндоскопик эндоназал шайверли дакриоцисториностомия", img: "" },
+          { name: "Бир томондан ендоскопик ендоназал шайверли гайморотомия", img: "" },
+          { name: "Бир томондан ендоскопик ендоназал шайверли фронтотомия", img: "" },
+          { name: "Бир томондан ендоскопик ендоназал шайверли сфеноидотомия", img: "" },
+          { name: "Ендоскопик ендоназал шайверли полипотомия", img: "" },
+          { name: "Бир томондан ендоскопик ендоназал шайверли дакриоцисториностомия", img: "" },
           { name: "Бир томондан паратсентез", img: "" },
           { name: "Бир томондан барабан пардасини шунтлаш", img: "" },
           { name: "Бирламчи очиқ риносептопластика", img: "" },
@@ -314,7 +332,7 @@ const translations = {
         phonePlaceholder: "Телефон рақамингизни киритинг",
         message: "Хабар",
         messagePlaceholder: "Хабарингизни ёзинг",
-        submit: "Хабар юбориш",
+        submit: "Хабар юборириш",
         statsTitle: "Яхши келажак учун илғор лаборатория хизматлари",
         stats: [
           { number: "1100+", label: "Тадқиқот жараёни" },
@@ -344,6 +362,15 @@ const translations = {
       contactTitle: "Контакты",
       address: "Узбекистан, г. Ташкент, проспект Бунёдкор, Чиланзар 17-квартал, дом 33/1",
       copyright: "© 2024 EndoLOR. Все права защищены.",
+    },
+    modal: {
+      title: "Связаться с нами",
+      desc: "Оставьте свое имя и номер телефона — мы свяжемся с вами в ближайшее время.",
+      nameLabel: "Имя",
+      namePlaceholder: "Введите ваше имя",
+      phoneLabel: "Номер телефона",
+      phonePlaceholder: "Введите ваш номер телефона",
+      submit: "ОТПРАВИТЬ"
     },
     aboutPage: {
       hero: { title: "О нас", breadcrumb: "Главная > О нас" },
@@ -506,6 +533,15 @@ const translations = {
       contactTitle: "Contact Us",
       address: "Uzbekistan, Tashkent, Bunyodkor avenue, Chilanzar 17th quarter, 33/1",
       copyright: "© 2024 EndoLOR. All Rights Reserved.",
+    },
+    modal: {
+      title: "Get in touch with us",
+      desc: "Leave your name and phone number — we will get back to you shortly.",
+      nameLabel: "Name",
+      namePlaceholder: "Enter your name",
+      phoneLabel: "Phone number",
+      phonePlaceholder: "Enter your phone number",
+      submit: "SUBMIT"
     },
     aboutPage: {
       hero: { title: "About Us", breadcrumb: "Home > About Us" },
