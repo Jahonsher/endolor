@@ -1,5 +1,5 @@
 const BOT_TOKEN = '8425127321:AAEUH1k5StFWbw13I-DMuzIigIjnlndyC3o'
-const CHAT_ID = '8156007398'
+const CHAT_ID = '-1003528925275'
 
 export async function sendToTelegram(message) {
   try {
