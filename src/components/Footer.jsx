@@ -1,9 +1,26 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import translations from '../data/translations'
+import { sendToTelegram } from '../utils/sendToTelegram'
 
 export default function Footer({ lang }) {
   const t = translations[lang]
   const f = t.footer
+
+  const [footerEmail, setFooterEmail] = useState('')
+  const [footerLoading, setFooterLoading] = useState(false)
+
+  async function handleNewsletter(e) {
+    e.preventDefault()
+    if (!footerEmail) return
+    setFooterLoading(true)
+    const msg = `📧 <b>Newsletter obuna</b>\n\n📧 Email: ${footerEmail}\n📍 Sahifa: Footer`
+    const ok = await sendToTelegram(msg)
+    setFooterLoading(false)
+    if (ok) {
+      setFooterEmail('')
+    }
+  }
 
   return (
     <footer className="bg-[#0c2340]">
@@ -23,16 +40,19 @@ export default function Footer({ lang }) {
             </div>
             
             {/* TO'G'IRLANGAN QISM: flex-col qo'shildi, sm:flex-row kichik ekrandan boshlab yonma-yon qiladi */}
-            <div className="flex flex-col sm:flex-row w-full md:w-auto gap-3">
+            <form onSubmit={handleNewsletter} className="flex flex-col sm:flex-row w-full md:w-auto gap-3">
               <input
                 type="email"
                 placeholder={f.emailPlaceholder}
+                value={footerEmail}
+                onChange={(e) => setFooterEmail(e.target.value)}
                 className="w-full md:w-72 px-5 py-3.5 bg-white/10 border border-white/20 rounded-lg text-sm text-white placeholder-white/50 focus:outline-none focus:bg-white/15 transition-colors"
+                required
               />
-              <button className="w-full sm:w-auto px-8 py-3.5 bg-white text-[#2E86DE] font-bold text-sm uppercase tracking-wide rounded-lg hover:bg-gray-100 transition-colors cursor-pointer shrink-0">
-                {f.submit}
+              <button type="submit" disabled={footerLoading} className="w-full sm:w-auto px-8 py-3.5 bg-white text-[#2E86DE] font-bold text-sm uppercase tracking-wide rounded-lg hover:bg-gray-100 transition-colors cursor-pointer shrink-0 disabled:opacity-50">
+                {footerLoading ? '⏳...' : f.submit}
               </button>
-            </div>
+            </form>
           </div>
         </div>
       </div>

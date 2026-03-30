@@ -1,7 +1,31 @@
+import { useState } from 'react'
 import translations from '../data/translations'
+import { sendToTelegram } from '../utils/sendToTelegram'
 
 export default function Contact({ lang, t }) {
   const c = t.contactPage
+
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [phone, setPhone] = useState('')
+  const [subject, setSubject] = useState('')
+  const [message, setMessage] = useState('')
+  const [loading, setLoading] = useState(false)
+
+  async function handleSubmit(e) {
+    e.preventDefault()
+    setLoading(true)
+    const msg = `📩 <b>Kontakt sahifasidan xabar</b>\n\n👤 Ism: ${name}\n📧 Email: ${email}\n📞 Tel: ${phone}\n📌 Mavzu: ${subject || 'Ko\'rsatilmagan'}\n💬 Xabar: ${message}\n📍 Sahifa: Kontakt`
+    const ok = await sendToTelegram(msg)
+    setLoading(false)
+    if (ok) {
+      setName('')
+      setEmail('')
+      setPhone('')
+      setSubject('')
+      setMessage('')
+    }
+  }
 
   return (
     <div>
@@ -74,13 +98,17 @@ export default function Contact({ lang, t }) {
           <div className="grid md:grid-cols-2 gap-10">
             {/* Form */}
             <div className="bg-white rounded-2xl p-8 shadow-md">
+              <form onSubmit={handleSubmit}>
               <div className="grid sm:grid-cols-2 gap-4 mb-4">
                 <div>
                   <label className="text-sm font-semibold text-[#1a3c5e] mb-1.5 block">{c.name} *</label>
                   <input
                     type="text"
                     placeholder={c.namePlaceholder}
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
                     className="w-full px-4 py-3 bg-[#f5f7fa] border-none rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#2E86DE]/30"
+                    required
                   />
                 </div>
                 <div>
@@ -88,7 +116,10 @@ export default function Contact({ lang, t }) {
                   <input
                     type="email"
                     placeholder={c.emailPlaceholder}
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     className="w-full px-4 py-3 bg-[#f5f7fa] border-none rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#2E86DE]/30"
+                    required
                   />
                 </div>
               </div>
@@ -98,7 +129,10 @@ export default function Contact({ lang, t }) {
                   <input
                     type="tel"
                     placeholder={c.phonePlaceholder}
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
                     className="w-full px-4 py-3 bg-[#f5f7fa] border-none rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#2E86DE]/30"
+                    required
                   />
                 </div>
                 <div>
@@ -106,6 +140,8 @@ export default function Contact({ lang, t }) {
                   <input
                     type="text"
                     placeholder={c.subjectPlaceholder}
+                    value={subject}
+                    onChange={(e) => setSubject(e.target.value)}
                     className="w-full px-4 py-3 bg-[#f5f7fa] border-none rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#2E86DE]/30"
                   />
                 </div>
@@ -115,15 +151,19 @@ export default function Contact({ lang, t }) {
                 <textarea
                   rows="5"
                   placeholder={c.messagePlaceholder}
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
                   className="w-full px-4 py-3 bg-[#f5f7fa] border-none rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#2E86DE]/30 resize-none"
+                  required
                 />
               </div>
-              <button className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#2E86DE] hover:bg-[#2474c4] text-white font-bold text-sm uppercase tracking-wider rounded-lg transition-all shadow-lg shadow-[#2E86DE]/30 hover:shadow-xl hover:-translate-y-0.5 cursor-pointer">
-                {c.submit}
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+              <button type="submit" disabled={loading} className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#2E86DE] hover:bg-[#2474c4] text-white font-bold text-sm uppercase tracking-wider rounded-lg transition-all shadow-lg shadow-[#2E86DE]/30 hover:shadow-xl hover:-translate-y-0.5 cursor-pointer disabled:opacity-50">
+                {loading ? '⏳ Yuborilmoqda...' : c.submit}
+                {!loading && <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
+                </svg>}
               </button>
+              </form>
             </div>
 
             {/* Map */}

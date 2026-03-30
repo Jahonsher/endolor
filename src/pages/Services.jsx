@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import operationsData from '../data/operations.json'
+import { sendToTelegram } from '../utils/sendToTelegram'
 
 export default function Services({ lang, t }) {
   // Tanlangan tildagi operatsiyalar ro'yxatini olish
@@ -9,6 +10,24 @@ export default function Services({ lang, t }) {
 
   // Modal oynani ochish/yopish uchun state
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Form state
+  const [name, setName] = useState('')
+  const [phone, setPhone] = useState('')
+  const [loading, setLoading] = useState(false)
+
+  async function handleSubmit(e) {
+    e.preventDefault()
+    setLoading(true)
+    const msg = `💼 <b>Xizmatdan foydalanish</b>\n\n👤 Ism: ${name}\n📞 Tel: ${phone}\n📍 Sahifa: Xizmatlar`
+    const ok = await sendToTelegram(msg)
+    setLoading(false)
+    if (ok) {
+      setName('')
+      setPhone('')
+      setIsModalOpen(false)
+    }
+  }
 
   return (
     <div className="py-10 bg-white min-h-screen">
@@ -99,12 +118,14 @@ export default function Services({ lang, t }) {
             </p>
 
             {/* Modal Form */}
-            <form className="space-y-6" onSubmit={(e) => { e.preventDefault(); alert("Tez orada bog'lanamiz!"); setIsModalOpen(false); }}>
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
                 <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2 px-1">{m.nameLabel}</label>
                 <input 
                   type="text" 
                   placeholder={m.namePlaceholder} 
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                   className="w-full px-6 py-4 bg-gray-50 border border-transparent focus:border-blue-500 rounded-2xl focus:bg-white focus:ring-4 focus:ring-blue-100 transition-all outline-none text-gray-700 font-semibold" 
                   required 
                 />
@@ -115,6 +136,8 @@ export default function Services({ lang, t }) {
                 <input 
                   type="tel" 
                   placeholder={m.phonePlaceholder} 
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
                   className="w-full px-6 py-4 bg-gray-50 border border-transparent focus:border-blue-500 rounded-2xl focus:bg-white focus:ring-4 focus:ring-blue-100 transition-all outline-none text-gray-700 font-semibold" 
                   required 
                 />
@@ -122,9 +145,10 @@ export default function Services({ lang, t }) {
 
               <button 
                 type="submit" 
-                className="w-full py-5 bg-[#0D6EFD] text-white font-bold rounded-full shadow-2xl shadow-blue-300 hover:bg-[#0b5ed7] transition-all hover:scale-[1.02] active:scale-95 uppercase tracking-[0.2em] text-xs mt-4 cursor-pointer"
+                disabled={loading}
+                className="w-full py-5 bg-[#0D6EFD] text-white font-bold rounded-full shadow-2xl shadow-blue-300 hover:bg-[#0b5ed7] transition-all hover:scale-[1.02] active:scale-95 uppercase tracking-[0.2em] text-xs mt-4 cursor-pointer disabled:opacity-50"
               >
-                {m.submit}
+                {loading ? '⏳ Yuborilmoqda...' : m.submit}
               </button>
             </form>
           </div>

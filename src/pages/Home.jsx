@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import galleryItems from '../data/gallery.json'
 import operationsData from '../data/operations.json'
+import { sendToTelegram } from '../utils/sendToTelegram'
 
 const filterTabs = [
   { key: 'all', label: 'all' },
@@ -101,6 +102,45 @@ export default function Home({ lang, t }) {
   
   // Modal state
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Modal form state
+  const [modalName, setModalName] = useState('')
+  const [modalPhone, setModalPhone] = useState('')
+  const [modalLoading, setModalLoading] = useState(false)
+
+  // Contact form state
+  const [contactName, setContactName] = useState('')
+  const [contactPhone, setContactPhone] = useState('')
+  const [contactMsg, setContactMsg] = useState('')
+  const [contactLoading, setContactLoading] = useState(false)
+
+  // Modal submit
+  async function handleModalSubmit(e) {
+    e.preventDefault()
+    setModalLoading(true)
+    const msg = `🏥 <b>Konsultatsiyaga yozilish</b>\n\n👤 Ism: ${modalName}\n📞 Tel: ${modalPhone}\n📍 Sahifa: Bosh sahifa`
+    const ok = await sendToTelegram(msg)
+    setModalLoading(false)
+    if (ok) {
+      setModalName('')
+      setModalPhone('')
+      setIsModalOpen(false)
+    }
+  }
+
+  // Contact form submit
+  async function handleContactSubmit(e) {
+    e.preventDefault()
+    setContactLoading(true)
+    const msg = `📋 <b>Bepul baho olish</b>\n\n👤 Ism: ${contactName}\n📞 Tel: ${contactPhone}\n💬 Xabar: ${contactMsg}\n📍 Sahifa: Bosh sahifa`
+    const ok = await sendToTelegram(msg)
+    setContactLoading(false)
+    if (ok) {
+      setContactName('')
+      setContactPhone('')
+      setContactMsg('')
+    }
+  }
 
   return (
     <div>
@@ -229,12 +269,12 @@ export default function Home({ lang, t }) {
           <div>
             <div className="bg-white rounded-2xl p-8 shadow-md">
               <h3 className="text-xl font-extrabold text-[#1a3c5e] mb-6">{t.home.contact.formTitle}</h3>
-              <div className="grid gap-4">
-                <input type="text" placeholder={t.home.contact.namePlaceholder} className="w-full px-4 py-3 bg-[#f5f7fa] rounded-full text-sm outline-none focus:ring-2 focus:ring-[#2E86DE]/30" />
-                <input type="tel" placeholder={t.home.contact.phonePlaceholder} className="w-full px-4 py-3 bg-[#f5f7fa] rounded-full text-sm outline-none focus:ring-2 focus:ring-[#2E86DE]/30" />
-                <textarea rows="4" placeholder={t.home.contact.messagePlaceholder} className="w-full px-4 py-3 bg-[#f5f7fa] rounded-2xl text-sm outline-none focus:ring-2 focus:ring-[#2E86DE]/30" />
-                <button className="bg-[#2E86DE] text-white py-3.5 rounded-full font-bold uppercase tracking-widest shadow-lg hover:bg-[#2474c4] transition-all cursor-pointer">{t.home.contact.submit}</button>
-              </div>
+              <form onSubmit={handleContactSubmit} className="grid gap-4">
+                <input type="text" placeholder={t.home.contact.namePlaceholder} value={contactName} onChange={(e) => setContactName(e.target.value)} className="w-full px-4 py-3 bg-[#f5f7fa] rounded-full text-sm outline-none focus:ring-2 focus:ring-[#2E86DE]/30" required />
+                <input type="tel" placeholder={t.home.contact.phonePlaceholder} value={contactPhone} onChange={(e) => setContactPhone(e.target.value)} className="w-full px-4 py-3 bg-[#f5f7fa] rounded-full text-sm outline-none focus:ring-2 focus:ring-[#2E86DE]/30" required />
+                <textarea rows="4" placeholder={t.home.contact.messagePlaceholder} value={contactMsg} onChange={(e) => setContactMsg(e.target.value)} className="w-full px-4 py-3 bg-[#f5f7fa] rounded-2xl text-sm outline-none focus:ring-2 focus:ring-[#2E86DE]/30" required />
+                <button type="submit" disabled={contactLoading} className="bg-[#2E86DE] text-white py-3.5 rounded-full font-bold uppercase tracking-widest shadow-lg hover:bg-[#2474c4] transition-all cursor-pointer disabled:opacity-50">{contactLoading ? '⏳ Yuborilmoqda...' : t.home.contact.submit}</button>
+              </form>
             </div>
           </div>
         </div>
@@ -250,16 +290,16 @@ export default function Home({ lang, t }) {
             </button>
             <h2 className="text-3xl font-bold text-[#1a3c5e] mb-2">{m.title}</h2>
             <p className="text-gray-500 text-sm mb-10">{m.desc}</p>
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleModalSubmit}>
               <div>
                 <label className="block text-sm font-bold text-[#1a3c5e] mb-2">{m.nameLabel}</label>
-                <input type="text" placeholder={m.namePlaceholder} className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:bg-white focus:ring-2 focus:ring-blue-100 transition-all outline-none" required />
+                <input type="text" placeholder={m.namePlaceholder} value={modalName} onChange={(e) => setModalName(e.target.value)} className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:bg-white focus:ring-2 focus:ring-blue-100 transition-all outline-none" required />
               </div>
               <div>
                 <label className="block text-sm font-bold text-[#1a3c5e] mb-2">{m.phoneLabel}</label>
-                <input type="tel" placeholder={m.phonePlaceholder} className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:bg-white focus:ring-2 focus:ring-blue-100 transition-all outline-none" required />
+                <input type="tel" placeholder={m.phonePlaceholder} value={modalPhone} onChange={(e) => setModalPhone(e.target.value)} className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:bg-white focus:ring-2 focus:ring-blue-100 transition-all outline-none" required />
               </div>
-              <button type="submit" className="w-full py-5 bg-[#0D6EFD] text-white font-bold rounded-full shadow-xl shadow-blue-200 hover:bg-[#0b5ed7] transition-all uppercase tracking-widest text-sm mt-4 cursor-pointer">{m.submit}</button>
+              <button type="submit" disabled={modalLoading} className="w-full py-5 bg-[#0D6EFD] text-white font-bold rounded-full shadow-xl shadow-blue-200 hover:bg-[#0b5ed7] transition-all uppercase tracking-widest text-sm mt-4 cursor-pointer disabled:opacity-50">{modalLoading ? '⏳ Yuborilmoqda...' : m.submit}</button>
             </form>
           </div>
         </div>
