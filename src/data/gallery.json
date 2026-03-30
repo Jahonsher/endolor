@@ -1,0 +1,12 @@
+[
+  { "id": 1, "src": "https://medicate.peacefulqode.co.in/wp-content/uploads/2021/12/1-1.jpg", "category": "clinic", "title": "Home Visit" },
+  { "id": 2, "src": "https://medicate.peacefulqode.co.in/wp-content/uploads/2021/12/2-2.jpg", "category": "family", "title": "Investigations" },
+  { "id": 3, "src": "https://medicate.peacefulqode.co.in/wp-content/uploads/2021/12/3-1.jpg", "category": "pediatrics", "title": "Surgical" },
+  { "id": 4, "src": "https://medicate.peacefulqode.co.in/wp-content/uploads/2021/12/4-2.jpg", "category": "clinic", "title": "Pediatrics Care" },
+  { "id": 5, "src": "https://medicate.peacefulqode.co.in/wp-content/uploads/2021/12/5-2.jpg", "category": "clinic", "title": "Cardiology" },
+  { "id": 6, "src": "https://medicate.peacefulqode.co.in/wp-content/uploads/2021/12/6-2.jpg", "category": "pediatrics", "title": "Treatments" },
+  { "id": 7, "src": "https://medicate.peacefulqode.co.in/wp-content/uploads/2021/12/7-2.jpg", "category": "family", "title": "Quality Therapy" },
+  { "id": 8, "src": "https://medicate.peacefulqode.co.in/wp-content/uploads/2021/12/8-2.jpg", "category": "laboratory", "title": "Orthodontics" },
+  { "id": 9, "src": "https://medicate.peacefulqode.co.in/wp-content/uploads/2021/10/9-2.jpg", "category": "clinic", "title": "Management" },
+  { "id": 10, "src": "https://medicate.peacefulqode.co.in/wp-content/uploads/2021/10/10-1.jpg", "category": "therapy", "title": "Laboratory Tests" }
+]
