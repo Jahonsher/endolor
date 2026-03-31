@@ -77,7 +77,7 @@ export default function Contact({ lang, t }) {
                 </svg>
               </div>
               <h4 className="font-bold text-[#1a3c5e] text-base mb-2">{c.emailTitle}</h4>
-              <a href="mailto:info@endolor.uz" className="text-gray-500 text-sm hover:text-[#2E86DE] transition-colors block">info@endolor.uz</a>
+              <a href="mailto:info@Tympanoplastika.uz" className="text-gray-500 text-sm hover:text-[#2E86DE] transition-colors block">info@Tympanoplastika.uz</a>
             </div>
           </div>
         </div>

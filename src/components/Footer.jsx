@@ -65,7 +65,7 @@ export default function Footer({ lang }) {
             <Link to="/" className="flex items-center gap-2 mb-5 justify-center sm:justify-start">
               <img
                 src="https://endolor.uz/logo.png"
-                alt="EndoLOR"
+                alt="Tympanoplastika"
                 className="h-12 w-auto brightness-0 invert"
               />
             </Link>
@@ -126,7 +126,7 @@ export default function Footer({ lang }) {
                 <span className="w-9 h-9 bg-white/10 rounded-full flex items-center justify-center shrink-0">
                   <svg className="w-4 h-4 text-[#5DADE2]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                 </span>
-                <a href="mailto:info@endolor.uz" className="text-gray-300 hover:text-[#5DADE2] text-sm transition-colors">info@endolor.uz</a>
+                <a href="mailto:info@Tympanoplastika.uz" className="text-gray-300 hover:text-[#5DADE2] text-sm transition-colors">info@Tympanoplastika.uz</a>
               </li>
               <li className="flex flex-col sm:flex-row items-center sm:items-start gap-3">
                 <span className="w-9 h-9 bg-white/10 rounded-full flex items-center justify-center shrink-0">
