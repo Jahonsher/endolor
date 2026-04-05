@@ -39,11 +39,12 @@ export default function Navbar({ lang, setLang }) {
         <div className="flex items-center justify-between h-[70px]">
           {/* ── Logo ── */}
           <Link to="/" className="flex items-center gap-2 shrink-0">
-            <img
+          <h1 className="font-bold text-xl text-blue-950">TYMPANO<span className="text-[#2E86DE]">PLASTIKA</span></h1>
+            {/* <img
               src="https://endolor.uz/logo.png"
               alt="EndoLOR"
               className="h-12 md:h-14 w-auto object-contain"
-            />
+            /> */}
           </Link>
 
           {/* ── Desktop Nav Links ── */}
